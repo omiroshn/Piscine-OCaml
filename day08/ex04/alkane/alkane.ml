@@ -106,28 +106,3 @@ class dodecane =
 object
 	inherit alkane 12
 end
-
-let make_start al =
-	let pack_molecules accl mol =
-		let sym = mol#formula in
-		match accl with
-		| (mol', n)::tl when sym = mol'#formula
-		  -> ((mol' :> Molecule.molecule), n + 1)::tl
-		| _                             		->
-		   ((mol :> Molecule.molecule), 1)::accl
-	in
-	let al = List.sort (fun a b -> String.compare a#formula b#formula) al in
-	(List.fold_left pack_molecules [] al) @ [(new Dioxygen.dioxygen, 1)]
-
-class alkane_combustion (al: alkane list) =
-object (self)
- 	inherit Reaction.reaction [] []
-
- 	val _start: (Molecule.molecule * int) list = make_start al
- 	val _result: (Molecule.molecule * int) list = [(new Carbondioxyde.carbondioxyde, 1); (new Water.water, 1)]
-
-	method get_start = []
-	method get_result = []
-	method balance : Reaction.reaction = [] []
-	method is_balanced = true
-end 

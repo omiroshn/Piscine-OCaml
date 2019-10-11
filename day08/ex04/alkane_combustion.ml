@@ -10,4 +10,15 @@
 (*                                                                            *)
 (* ************************************************************************** *)
 
+class alkane_combustion (al: alkane list) =
+object (self)
+ 	inherit Reaction.reaction [] []
 
+ 	val _start: (Molecule.molecule * int) list = make_start al
+ 	val _result: (Molecule.molecule * int) list = [(new Carbondioxyde.carbondioxyde, 1); (new Water.water, 1)]
+
+	method get_start = []
+	method get_result = []
+	method balance : Reaction.reaction = [] []
+	method is_balanced = true
+end 
