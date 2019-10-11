@@ -46,3 +46,88 @@ object
 			in get_hydrogen carb 0 (n * 2 + 2)
 		)
 end
+
+class methane =
+object
+	inherit alkane 1
+end
+
+class ethane =
+object
+	inherit alkane 2
+end
+
+class propane =
+object
+	inherit alkane 3
+end
+
+class butane =
+object
+	inherit alkane 4
+end
+
+class pentane =
+object
+	inherit alkane 5
+end
+
+class hexane =
+object
+	inherit alkane 6
+end
+
+class heptane =
+object
+	inherit alkane 7
+end
+
+class octane =
+object
+	inherit alkane 8
+end
+
+class nonane =
+object
+	inherit alkane 9
+end
+
+class decane =
+object
+	inherit alkane 10
+end
+
+class undecane =
+object
+	inherit alkane 11
+end
+
+class dodecane =
+object
+	inherit alkane 12
+end
+
+let make_start al =
+	let pack_molecules accl mol =
+		let sym = mol#formula in
+		match accl with
+		| (mol', n)::tl when sym = mol'#formula
+		  -> ((mol' :> Molecule.molecule), n + 1)::tl
+		| _                             		->
+		   ((mol :> Molecule.molecule), 1)::accl
+	in
+	let al = List.sort (fun a b -> String.compare a#formula b#formula) al in
+	(List.fold_left pack_molecules [] al) @ [(new Dioxygen.dioxygen, 1)]
+
+class alkane_combustion (al: alkane list) =
+object (self)
+ 	inherit Reaction.reaction [] []
+
+ 	val _start: (Molecule.molecule * int) list = make_start al
+ 	val _result: (Molecule.molecule * int) list = [(new Carbondioxyde.carbondioxyde, 1); (new Water.water, 1)]
+
+	method get_start = []
+	method get_result = []
+	method balance : Reaction.reaction = [] []
+	method is_balanced = true
+end 

@@ -11,9 +11,17 @@
 (* ************************************************************************** *)
 
 let () =
-	let methane = new Methane.methane in
-	let ethane = new Ethane.ethane in
-	let octane = new Octane.octane in
-	print_endline (methane#to_string);
-	print_endline (ethane#to_string);
-	print_endline (octane#to_string)
+	let lst = [new Alkane.methane;
+				new Alkane.ethane;
+				new Alkane.propane;
+				new Alkane.butane;
+				new Alkane.pentane;
+				new Alkane.hexane;
+				new Alkane.heptane;
+				new Alkane.octane;
+				new Alkane.nonane;
+				new Alkane.decane;
+				new Alkane.undecane;
+				new Alkane.dodecane] in 
+
+  List.iter (fun x -> print_endline x#to_string) lst

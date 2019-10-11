@@ -10,12 +10,4 @@
 (*                                                                            *)
 (* ************************************************************************** *)
 
-class alkane_combustion =
-object
- 	inherit Reactions.reaction
 
-	method get_start = []
-	method get_result = []
-	method balance = new Reactions.reaction
-	method is_balanced = true
-end 

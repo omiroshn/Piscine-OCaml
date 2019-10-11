@@ -13,7 +13,7 @@
 RESULT = a.out
 ATOMS = atom.ml carbon.ml copper.ml hydrogen.ml iron.ml oxygen.ml tin.ml nitrogen.ml
 MOLECULE = molecule.ml water.ml carbondioxyde.ml trinitrotoluene.ml glucose.ml ozone.ml sugar.ml
-ALKANES = alkane.ml methane.ml ethane.ml octane.ml
+ALKANES = alkane.ml
 SOURCES =	$(addprefix atom/, $(ATOMS)) \
 			$(addprefix molecule/, $(MOLECULE)) \
 			$(addprefix alkane/, $(ALKANES)) \

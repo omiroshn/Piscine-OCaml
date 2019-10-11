@@ -12,8 +12,8 @@
 
 RESULT = a.out
 ATOMS = atom.ml carbon.ml copper.ml hydrogen.ml iron.ml oxygen.ml tin.ml nitrogen.ml
-MOLECULE = molecule.ml water.ml carbondioxyde.ml trinitrotoluene.ml glucose.ml ozone.ml sugar.ml
-ALKANES = alkane.ml methane.ml ethane.ml octane.ml
+MOLECULE = molecule.ml water.ml carbondioxyde.ml trinitrotoluene.ml glucose.ml ozone.ml sugar.ml dioxygen.ml
+ALKANES = alkane.ml
 REACTIONS = reaction.ml
 SOURCES =	$(addprefix atom/, $(ATOMS)) \
 			$(addprefix molecule/, $(MOLECULE)) \

@@ -10,7 +10,7 @@
 (*                                                                            *)
 (* ************************************************************************** *)
 
-class virtual reaction (lst1: Molecule.molecule list) (lst2: Molecule.molecule list) =
+class virtual reaction (start: (Molecule.molecule * int) list) (result: (Molecule.molecule * int) list) =
 object
 	method virtual get_start: (Molecule.molecule * int) list
 	method virtual get_result: (Molecule.molecule * int) list

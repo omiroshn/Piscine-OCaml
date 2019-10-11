@@ -1,16 +1,17 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   ethane.ml                                          :+:      :+:    :+:   *)
+(*   dioxygen.ml                                        :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: omiroshn <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2019/10/11 19:10:41 by omiroshn          #+#    #+#             *)
-(*   Updated: 2019/10/11 19:10:41 by omiroshn         ###   ########.fr       *)
+(*   Created: 2019/10/11 23:01:28 by omiroshn          #+#    #+#             *)
+(*   Updated: 2019/10/11 23:01:31 by omiroshn         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-class ethane =
+class dioxygen =
 object
-	inherit Alkane.alkane 2
+	inherit Molecule.molecule "Dioxygen"
+		[(new Oxygen.oxygen); (new Oxygen.oxygen)]
 end
