@@ -1,0 +1,4 @@
+.setup_stamp
+_build/
+a.out
+.DS_Store
