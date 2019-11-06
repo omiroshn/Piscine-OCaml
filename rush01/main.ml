@@ -1,3 +1,8 @@
+open State
+open Renderer
+open Character
+open Sdlevent
+
 let health_tick (state : State.t) =
 	let ticks = Sdltimer.get_ticks () in
 	if ticks - state.last_tick >= 1000 then
